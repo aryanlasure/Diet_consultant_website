@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITNESS FORM</title>
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/png+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>FITNESS FORM</h2>
+    <form onsubmit="sendEmail();reset();return false" aria-label="joinNow" >
+      <h3>PERSONAL INFORMATION:</h3>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Place, State, Country:</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact No.:</label>
+        <input type="tel" id="contact" name="contact" required>
+      </div>
+      <div class="form-group">
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" name="profession" required>
+      </div>
+      <div class="form-group">
+        <label for="working_hours">Working Hours/Shifts:</label>
+        <input type="text" id="working_hours" name="working_hours" required>
+      </div>
+
+      <h3>HEALTH INFORMATION:</h3>
+      <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" name="weight" required>
+      </div>
+      <div class="form-group">
+        <label>BP:</label>
+        <input type="radio" id="bp_yes" name="bp" value="yes">
+        <label for="bp_yes">Yes</label>
+        <input type="radio" id="bp_no" name="bp" value="no">
+        <label for="bp_no">No</label>
+      </div>
+      <div class="form-group">
+        <label>Thyroid:</label>
+        <input type="radio" id="thyroid_yes" name="thyroid" value="yes">
+        <label for="thyroid_yes">Yes</label>
+        <input type="radio" id="thyroid_no" name="thyroid" value="no">
+        <label for="thyroid_no">No</label>
+      </div>
+      
+
+      <h3>MY INTEREST</h3>
+      <div class="form-group">
+        <label for="interest">Select What are you looking for?</label>
+        <select id="interest" name="interest" required>
+          <option value="">Select an option</option>
+          <option value="Weight loss">Weight loss</option>
+          <option value="Weight gain">Weight gain</option>
+          <option value="Pcod/pcos management">Pcod/pcos management</option>
+          <option value="Diabetic management">Diabetic management</option>
+          <option value="Thyroid management">Thyroid management</option>
+          <option value="Weight management">Weight management</option>
+        </select>
+      </div>
+
+      <h3>WHAT YOU WILL GET:</h3>
+      <ul class="form-list">
+        <li>1 ON 1 CONSULTATION</li>
+        <li>PERSONALISED DIET PLAN</li>
+        <li>WORKOUT PLAN</li>
+        <li>DIET RECIPES</li>
+        <li>WHATSAPP SERVICE</li>
+      </ul>
+
+      <h3>NUTRITIONAL INFORMATION:</h3>
+      <div class="form-group">
+        <label for="consulted_dietitian">Consulted any Dietitian before this?</label>
+        <input type="radio" id="consulted_yes" name="consulted_dietitian" value="yes">
+        <label for="consulted_yes">Yes</label>
+        <input type="radio" id="consulted_no" name="consulted_dietitian" value="no">
+        <label for="consulted_no">No</label>
+      </div>
+      
+
+      <div class="form-group">
+        <label>YOU WILL GET AN UPDATE WITH OUR NUTRITIONIST WITHIN NEXT 24 HRS.</label>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  
+  
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "dietconsultant237@gmail.com",
+            Password : "F51413E61309920ED5E8387C31402F0D6351",
+            To : 'dietconsultant237@gmail.com',
+            From : document .getElementById("email").value,
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+          message => alert(message)
+        );
+    }
+  </script>
+</body>
+</html>
